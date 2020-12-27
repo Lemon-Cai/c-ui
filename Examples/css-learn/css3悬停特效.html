@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3悬停特效</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,800|Lora:400italic|Playfair+Display:700);
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #03a9f4;
+        }
+        .container {
+            padding: 40px;
+            background: #182b3c;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .4);
+        }
+        .container h2 {
+            color: #fff;
+            margin-bottom: 10px;
+            display: inline-block;
+            font-weight: 500;
+            border-bottom: 2px solid #fff;
+        }
+        .container ul {
+            position: relative;
+        }
+        .container ul li {
+            position: relative;
+            list-style: none;
+            display: table;
+            margin: 10px 0;
+            padding-left: 34px;
+            padding-right: 5px;
+        }
+        .container ul li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            background: transparent;
+            border-radius: 34px;
+            transition: background .5s, width .5s;
+            transition-delay: .5s, 0s;
+            border:  2px solid #03a9f4;
+            box-sizing: border-box;
+        }
+        .container ul li:hover::before {
+            width: 100%;
+            background: #03a9f4;
+            transition-delay: 0s, .5s;
+        }
+        .container ul li::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 6px;
+            height: 6px;
+            border-top: 2px solid #fff;
+            border-right:  2px solid #fff;
+            transform: rotate(45deg);
+            transition: .5s;
+            transition-delay: 0s;
+        }
+        .container ul li:hover::after {
+            left: 24px;
+            transition-delay: .5s;
+            transform: rotate(45deg) scale(1.5);
+        }
+        .container ul li p {
+            position: relative;
+            z-index: 10;
+            padding: 5px 10px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>List Item Hover Effects</h2>
+        <ul>
+            <li>
+                <p>There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real!</p>
+            </li>
+            <li>
+                <p>be what you want to be,because you have only one life and one chance to do all the things you want to do.</p>
+            </li>
+            <li>
+                <p>                Dream what you want to dream;go where you want to go; </p>
+            </li>
+            <li>
+                <p>                May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy? </p>
+            </li>
+            <li>
+                <p>                Always put yourself in others’shoes. </p>
+            </li>
+            <li>
+                <p>                If you feel that it hurts you,it probably hurts the other person, too.</p>
+            </li>
+        </ul>
+    </div>
+<script type="text/javascript"></script>
+</body>
+</html>
