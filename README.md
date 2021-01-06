@@ -23,6 +23,12 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### Eslint校验
+```text
+"off"或者0    //关闭规则关闭
+"warn"或者1    //在打开的规则作为警告（不影响退出代码）
+"error"或者2    //把规则作为一个错误（退出代码触发时为1）
+```
 
 ## Description
 本项目利用业余时间一点一点积累，希望可以写出一套基于Vue2.x的移动端ui组件库
@@ -279,4 +285,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
 
 6、javaScript中只允许使用单引号，标签中统一使用双引号
+
+7、标签的 Props 应该有统一的顺序，依次为指令、属性和事件。
+```vue
+    <my-component
+      v-if="if"
+      v-show="show"
+      v-model="value"
+      ref="ref"
+      :key="key"
+      :text="text"
+      @input="onInput"
+      @change="onChange"
+    />
+```
 

@@ -19,15 +19,12 @@ module.exports = {
     'vue/eqeqeq': 'error',
     'vue/no-irregular-whitespace': 'error',
     'vue/script-indent': 'error',
-    "indent": [2, 4],         // 强制使用一致的缩进
-    "eqeqeq": [2, "always"],  // 要求使用 === 和 !==
-    "semi": [2, "never"],     // 要求或禁止使用分号代替 ASI
-    "quotes": [2, "single"]  // 强制使用一致的反勾号、双引号或单引号
+    'indent': [2, 2],         // 强制使用一致的缩进
+    'eqeqeq': [2, "always"],  // 要求使用 === 和 !==
+    'semi': [2, "never"],     // 语句强制分号结尾 'always' 、 语句不要分号结尾 'never'
+    'quotes': [2, "single"],  // 强制使用一致的反勾号、双引号或单引号
+    'prettier/prettier': 'error'
   },
 
-  'extends': [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/prettier'
-  ]
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier']
 };

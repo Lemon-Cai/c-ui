@@ -1,22 +1,16 @@
 <template>
-    
+  <div></div>
 </template>
 
 <script>
-    export default {
-        name: "index",
-        data() {
-            return {}
-        },
-        created() {
-
-        },
-        mounted() {
-
-        }
-    }
+export default {
+  name: 'c-tab',
+  data() {
+    return {}
+  },
+  created() {},
+  mounted() {}
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

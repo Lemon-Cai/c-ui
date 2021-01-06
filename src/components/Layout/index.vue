@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  name: 'c-table'
+  name: 'c-layout',
+  data() {
+    return {}
+  },
+  created() {},
+  mounted() {}
 }
 </script>
 

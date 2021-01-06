@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start" : "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "fix": "eslint --fix --ext .js,.vue,src",
+    "format": "prettier --write \"src/**/*.js\" \"src/**/*.vue\""
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -30,7 +33,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,vue}": [
+    "src/**/*.{js,jsx,vue}": [
       "vue-cli-service lint",
       "git add"
     ]
