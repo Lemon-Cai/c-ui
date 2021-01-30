@@ -23,17 +23,51 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Eslint校验
+### Eslint+Prettier校验说明
 ```text
-"off"或者0    //关闭规则关闭
-"warn"或者1    //在打开的规则作为警告（不影响退出代码）
+"off"或者0      //关闭规则关闭
+"warn"或者1     //在打开的规则作为警告（不影响退出代码）
 "error"或者2    //把规则作为一个错误（退出代码触发时为1）
+```
+#### eslint和prettier的冲突
+```text
+    错误日志
+        15:7   warning  Delete `·`                                 prettier/prettier
+        19:24  error    Missing space before function parentheses  space-before-function-paren
+    
+    eslint配置
+      'space-before-function-paren': ['error', 'always'],    // 冲突
+
+    解决：
+      npm uninstall prettier
+```
+**eslint和prettier基本配置**
+```text
+eslint：
+    'indent': [2, 2],                     // 强制使用一致的缩进
+    'eqeqeq': [2, "always"],              // 要求使用 === 和 !==
+    'semi': [2, "never"],                 // 语句强制分号结尾 'always' 、 语句不要分号结尾 'never'
+    'quotes': [2, "single"],              // 强制使用一致的反勾号、双引号或单引号
+    'no-trailing-spaces': 'error',        // 禁用行尾空格
+    'no-spaced-func': 'error',            // 函数调用时 禁止 function 标识符和圆括号之间有空格
+    'comma-dangle': [2, 'never'],         // 要求或禁止使用尾随逗号；最后一个属性是不需要逗号 错误：{ a: 1, b: 1, }
+    'arrow-spacing': ["error", { 'before': true, 'after': true }],         // =>的前/后括号
+    'space-before-function-paren': ['error', 'always'],                    // (默认) 要求在参数的 ( 前面有一个空格。
+    'lines-around-comment': ['error', { 'beforeBlockComment': true }],     // 强制注释周围有空行
+
+prettier：
+      'tabWidth': 2,                // 缩进字节数
+      'useTabs': false,             // 缩进不使用tab，使用空格
+      'semi': false,                // 句尾添加分号
+      'singleQuote': true           // 使用单引号代替双引号
+      'endOfLine': 'auto',          // 结尾是 \n \r \n\r auto
+      'trailingComma': 'none',      // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
 ```
 
 ## Description
 本项目利用业余时间一点一点积累，希望可以写出一套基于Vue2.x的移动端ui组件库
 
-## 开发规范
+## Develop Rules
 1、方法名 与圆括号 和 花括号之间必须加空格
 
 正确【✔】
@@ -214,7 +248,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```text
     add / update / delete / detail / get
 ```
-附： 函数方法常用的动词:
+*附： 函数方法常用的动词:*
+
 ```text
     get 获取/set 设置,
     add 增加/remove 删除
@@ -284,9 +319,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     MAX_COUNT
 ```
 
-6、javaScript中只允许使用单引号，标签中统一使用双引号
+6、javaScript中只允许使用单引号，标签中统一使用双引号，标签模板必须使用字符串模板
 
-7、标签的 Props 应该有统一的顺序，依次为指令、属性和事件。
+```html
+<script>
+  let el = `<div class="dom"></div>`
+  let str = ''
+</script>
+```
+
+
+7、标签的 Props 应该有统一的顺序，依次为指令、属性和事件，如果写内联样式，放在最后
+
 ```vue
     <my-component
       v-if="if"
@@ -297,6 +341,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
       :text="text"
       @input="onInput"
       @change="onChange"
+      style="font-size: 14px;"
     />
 ```
+
+8、所有的事件以on-开始，事件的方法以handle-开始
 

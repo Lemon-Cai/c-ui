@@ -84,24 +84,75 @@ sans-serif;
 @orange-9: #873800;
 @orange-10: #612500;
 
+// text
+@text-color: @green-9;
+@active-color: @gray-2;
+
+// background
+@background-color: @gray-1;
 
 // Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: 14px;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 
 // Margin
+@margin-base: 4px;
+@margin-xs: @padding-base * 2;
+@margin-sm: @padding-base * 3;
+@margin-md: 14px;
+@margin-lg: @padding-base * 6;
+@margin-xl: @padding-base * 8;
 
 // Border
+@border-color: @gray-3;
+@border-width-base: 1px;
+@border-radius-sm: 2px;
+@border-radius-md: 4px;
+@border-radius-lg: 8px;
+@border-radius-max: 100%;
+
+// mask
+@mask-z-index: 1999;
+@mask-background-color: rgba(0, 0, 0, 0.6);
 
 // Animation
 @animation-duration-base: .3s;
 @animation-duration-fast: .2s;
 @animation-duration-slow: .5s;
+@animation-timing-function-enter: ease-out;
+@animation-timing-function-leave: ease-in;
 
 // z-index
-@progress-zindex: 2000;
-@popover-zindex: 1999;
-@toast-zindex: 1999;
-@action-sheet-zindex: 1000; // actionsheet 会放到 popup / modal 中
-@picker-zindex: 1000;
-@popup-zindex: 999;
-@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-@tabs-pagination-zindex: 999;
+@progress-z-index: 2000;
+@popover-z-index: 1999;
+@toast-z-index: 1999;
+@picker-z-index: 1000;
+@popup-z-index: 999;
+@modal-z-index: 999; // modal.alert 应该最大，其他应该较小
+@tabs-pagination-z-index: 999;
+
+// Actionsheet
+@action-sheet-z-index: 2001;  // actionsheet 会放到 popup / modal 中
+@action-sheet-header-font-size: @font-size-lg;
+@action-sheet-header-height: 48px;
+@action-sheet-max-height: 80%;
+@action-sheet-cancel-text-color: @gray-7;
+@action-sheet-item-background: @white;
+@action-sheet-max-height: 80%;
+@action-sheet-header-height: 48px;
+@action-sheet-header-font-size: @font-size-lg;
+@action-sheet-description-color: @gray-6;
+@action-sheet-description-font-size: @font-size-md;
+@action-sheet-description-line-height: @line-height-md;
+@action-sheet-item-background: @white;
+@action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-line-height: @line-height-lg;
+@action-sheet-item-disabled-text-color: @gray-5;
+
+@action-sheet-cancel-text-color: @gray-7;
+@action-sheet-cancel-padding-top: @padding-xs;
+@action-sheet-cancel-padding-color: @background-color;
