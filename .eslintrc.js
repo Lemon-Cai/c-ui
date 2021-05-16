@@ -17,6 +17,7 @@ module.exports = {
     'vue/html-quotes': 'error',
     'vue/camelcase': 'error',
     'vue/eqeqeq': 'error',
+    'vue/no-unused-components': 'off',
     'vue/no-irregular-whitespace': 'error',     // 不允许不规则的空白
     'vue/script-indent': 'error',
     'indent': [2, 2],                     // 强制使用一致的缩进

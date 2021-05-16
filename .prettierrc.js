@@ -46,5 +46,6 @@ module.exports = {
   'arrowParens': "avoid",                    //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
   // 'stylelintIntegration': false,             //不让prettier使用stylelint的代码格式进行校验
   'eslintIntegration': false,                //不让prettier使用eslint的代码格式进行校验
-  'htmlWhitespaceSensitivity': "ignore"
+  'htmlWhitespaceSensitivity': "ignore",
+  "jsxSingleQuote": true,
 };

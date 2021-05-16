@@ -6,7 +6,7 @@
     </CActionSheet>
 
     <br />
-    <HelloJSX msg="Welcome to Your Vue.js App"></HelloJSX>
+    <!-- <HelloJSX msg="Welcome to Your Vue.js App"></HelloJSX> -->
   </div>
 </template>
 

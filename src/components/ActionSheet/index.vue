@@ -1,6 +1,6 @@
 <template>
   <div class="c-action-sheet" v-if="show">
-    <div class="c-mask"></div>
+    <div class="c-mask" @click="handleClickMask"></div>
     <div class="c-action-sheet__wrapper">
       <div class="c-action-sheet__hd">
         <slot name="header"></slot>
@@ -47,10 +47,10 @@ export default {
       type: String,
       default: '取消'
     },
-    show: {
-      type: Boolean,
-      default: false
-    },
+    // show: {
+    //   type: Boolean,
+    //   default: false
+    // },
     value: [Boolean],
     // 是否在点击遮罩层后关闭
     closeOnClickMask: {
@@ -72,13 +72,20 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      show: false
+    }
   },
-  created () {},
+  created () {
+    this.show = this.value
+  },
   mounted () {},
   methods: {
     handleCancel () {
       this.$emit('input', false)
+    },
+    handleClickMask () {
+      this.handleCancel()
     },
     handleClickItem (record, index) {}
   }
